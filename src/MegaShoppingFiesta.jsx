@@ -106,6 +106,7 @@ function BenefitCard({ icon, title, desc, index }) {
 
 export default function App() {
   const [heroVisible, setHeroVisible] = useState(false);
+  const [language, setLanguage] = useState("EN");
   const countdown = useCountdown("2026-04-03T10:00:00");
   useEffect(() => { setTimeout(() => setHeroVisible(true), 100); }, []);
 
@@ -140,6 +141,18 @@ export default function App() {
     <>
       <style>{css}</style>
       <FloatingParticles />
+      <div style={{ position: "fixed", top: 20, left: 20, zIndex: 100 }}>
+        <button 
+          onClick={() => setLanguage(language === "EN" ? "SI" : "EN")}
+          style={{
+            background: "rgba(255,255,255,0.1)", border: "1px solid rgba(255,215,0,0.5)",
+            color: "#FFD700", padding: "6px 16px", borderRadius: 20, cursor: "pointer",
+            fontWeight: "bold", backdropFilter: "blur(5px)", fontSize: "0.85rem"
+          }}
+        >
+          {language === "EN" ? "සිංහල" : "English"}
+        </button>
+      </div>
       <div style={{
         minHeight: "100vh",
         background: "linear-gradient(135deg,#1a0a2e 0%,#16213e 40%,#0f3460 70%,#1a1a2e 100%)",
@@ -191,19 +204,19 @@ export default function App() {
 
           <div style={{ animation: heroVisible ? "fadeIn 0.8s ease 0.9s both" : "none", opacity: 0 }}>
             <p style={{ color: "rgba(255,255,255,0.7)", fontSize: "1rem", letterSpacing: 3, marginBottom: 8, textTransform: "uppercase" }}>
-              You Are Cordially Invited To The
+              {language === "EN" ? "You Are Cordially Invited To The" : "ඔබට ගෞරවයෙන් ආරාධනා කරමු"}
             </p>
             <p style={{ color: "rgba(255,255,255,0.6)", fontSize: "0.85rem", marginBottom: 36 }}>
-              Grand Opening
+              {language === "EN" ? "Grand Opening" : "මහා සමාරම්භක උත්සවය"}
             </p>
           </div>
 
           <div style={{ animation: heroVisible ? "fadeIn 0.8s ease 1.1s both" : "none", opacity: 0, marginBottom: 40 }}>
             <div className="detail-row">
               {[
-                { icon: "📅", label: "Date", value: "Friday, April 3rd, 2026" },
-                { icon: "🕙", label: "Time", value: "10:00 AM" },
-                { icon: "📍", label: "Venue", value: "BMICH, Colombo" },
+                { icon: "📅", label: language === "EN" ? "Date" : "දිනය", value: language === "EN" ? "Friday, April 3rd, 2026" : "2026 අප්‍රේල් 3 වන සිකුරාදා" },
+                { icon: "🕙", label: language === "EN" ? "Time" : "වේලාව", value: language === "EN" ? "10:00 AM" : "පෙ.ව. 10:00" },
+                { icon: "📍", label: language === "EN" ? "Venue" : "ස්ථානය", value: language === "EN" ? "BMICH, Colombo" : "BMICH, කොළඹ" },
               ].map(d => (
                 <div key={d.label} style={{
                   background: "rgba(255,255,255,0.08)", backdropFilter: "blur(10px)",
@@ -219,13 +232,13 @@ export default function App() {
 
           <div style={{ animation: heroVisible ? "fadeIn 0.8s ease 1.3s both" : "none", opacity: 0 }}>
             <p style={{ fontSize: "0.7rem", letterSpacing: 4, color: "rgba(255,255,255,0.5)", marginBottom: 16, textTransform: "uppercase" }}>
-              Opening In
+              {language === "EN" ? "Opening In" : "විවෘත කිරීමට තව"}
             </p>
             <div className="countdown-row">
-              <CountdownBox value={countdown.days} label="Days" />
-              <CountdownBox value={countdown.hours} label="Hours" />
-              <CountdownBox value={countdown.minutes} label="Minutes" />
-              <CountdownBox value={countdown.seconds} label="Seconds" />
+              <CountdownBox value={countdown.days} label={language === "EN" ? "Days" : "දින"} />
+              <CountdownBox value={countdown.hours} label={language === "EN" ? "Hours" : "පැය"} />
+              <CountdownBox value={countdown.minutes} label={language === "EN" ? "Minutes" : "මිනිත්තු"} />
+              <CountdownBox value={countdown.seconds} label={language === "EN" ? "Seconds" : "තත්පර"} />
             </div>
           </div>
 
@@ -254,31 +267,64 @@ export default function App() {
 
         {/* EXPERIENCE */}
         <section style={{ position: "relative", zIndex: 1, padding: "60px 20px 80px", maxWidth: 800, margin: "0 auto", textAlign: "center" }}>
-          <div style={{
-            color: "rgba(255,255,255,0.9)", fontSize: "clamp(1rem,2vw,1.1rem)",
-            lineHeight: 1.8, fontFamily: "Georgia, serif",
-            textAlign: "center", display: "flex", flexDirection: "column", gap: "20px"
-          }}>
-            <p style={{ fontWeight: "bold", fontSize: "1.2em", color: "#FFD700" }}>
-              🌸 Start This New Year in a Fresh Way! 🌸
-            </p>
-            <p>
-              Skip the hassle of going from place to place...<br/>
-              ✨ Begin your New Year shopping with a fresh experience at a new place!
-            </p>
-            <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "8px" }}>
-               <li>🛍️ Everything you need for your home in one place</li>
-               <li>💥 Massive discounts</li>
-               <li>🎁 Exclusive offers</li>
-            </ul>
-            <p>
-              👨‍👩‍👧‍👦 Join us and celebrate<br/>
-              a fresh beginning this New Year!
-            </p>
-            <p style={{ fontWeight: "bold", fontSize: "1.1em", color: "#FFD700" }}>
-              👉 Shop smart. Enjoy more. All in one place
-            </p>
-          </div>
+          {language === "EN" ? (
+            <div style={{
+              color: "rgba(255,255,255,0.9)", fontSize: "clamp(1rem,2vw,1.1rem)",
+              lineHeight: 1.8, fontFamily: "Georgia, serif",
+              textAlign: "center", display: "flex", flexDirection: "column", gap: "20px"
+            }}>
+              <p style={{ fontWeight: "bold", fontSize: "1.2em", color: "#FFD700" }}>
+                🌸 Start This New Year in a Fresh Way! 🌸
+              </p>
+              <p>
+                Skip the hassle of going from place to place...<br/>
+                ✨ Begin your New Year shopping with a fresh experience at a new place!
+              </p>
+              <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "8px" }}>
+                 <li>🛍️ Everything you need for your home in one place</li>
+                 <li>💥 Massive discounts</li>
+                 <li>🎁 Exclusive offers</li>
+              </ul>
+              <p>
+                👨‍👩‍👧‍👦 Join us and celebrate<br/>
+                a fresh beginning this New Year!
+              </p>
+              <p style={{ fontWeight: "bold", fontSize: "1.1em", color: "#FFD700" }}>
+                👉 Shop smart. Enjoy more. All in one place
+              </p>
+            </div>
+          ) : (
+            <div style={{
+              color: "rgba(255,255,255,0.9)", fontSize: "clamp(1rem,2vw,1.1rem)",
+              lineHeight: 1.8, fontFamily: "sans-serif",
+              textAlign: "center", display: "flex", flexDirection: "column", gap: "20px"
+            }}>
+              <p style={{ fontWeight: "bold", fontSize: "1.2em", color: "#FFD700" }}>
+                🌸 මේ අවුරුද්ද අලුත් විදිහට පටන් ගන්න! 🌸
+              </p>
+              <p>
+                පරණ විදිහට රස්තියාදු වෙලා shopping යන්න එපා...<br/>
+                ✨ අලුත් තැනකින්, අලුත් අත්දැකීමක් එක්ක<br/>
+                ඔබේ අවුරුදු සූදානම් වීම ආරම්භ කරන්න!
+              </p>
+              <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "8px" }}>
+                 <li>🎉 Mega Shopping Fiesta 2026 🎉</li>
+                 <li>📅 අප්‍රේල් 3, 4, 5</li>
+                 <li>📍 BMICH, කොළඹ</li>
+                 <li>🛍️ ගෙදරට අවශ්‍ය හැමදේම එකම තැනකින්</li>
+                 <li>💥 ඉතා ඉහල වට්ටම්</li>
+                 <li>🎁 විශේෂ දීමනා</li>
+              </ul>
+              <p>
+                👨‍👩‍👧‍👦 අප හා එක්වන්න<br/>
+                අලුත් ආරම්භයක් එක්ක<br/>
+                අලුත් අවුරුද්ද සැමරන්න!
+              </p>
+              <p style={{ fontWeight: "bold", fontSize: "1.1em", color: "#FFD700" }}>
+                👉 මේ අවුරුද්දේ smart විදිහට shopping කරමු!
+              </p>
+            </div>
+          )}
         </section>
 
         {/* FOOTER */}
