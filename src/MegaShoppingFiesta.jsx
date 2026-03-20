@@ -194,7 +194,7 @@ export default function App() {
               You Are Cordially Invited To The
             </p>
             <p style={{ color: "rgba(255,255,255,0.6)", fontSize: "0.85rem", marginBottom: 36 }}>
-              Official Ribbon-Cutting Ceremony &amp; Grand Opening
+              Grand Opening
             </p>
           </div>
 
