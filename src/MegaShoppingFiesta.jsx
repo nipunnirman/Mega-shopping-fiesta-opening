@@ -254,13 +254,31 @@ export default function App() {
 
         {/* EXPERIENCE */}
         <section style={{ position: "relative", zIndex: 1, padding: "60px 20px 80px", maxWidth: 800, margin: "0 auto", textAlign: "center" }}>
-          <p style={{
-            color: "rgba(255,255,255,0.8)", fontSize: "clamp(1rem,2.5vw,1.2rem)",
-            lineHeight: 1.85, fontFamily: "Georgia, serif", fontStyle: "italic",
-            borderLeft: "4px solid #FFD700", paddingLeft: 24, textAlign: "left",
+          <div style={{
+            color: "rgba(255,255,255,0.9)", fontSize: "clamp(1rem,2vw,1.1rem)",
+            lineHeight: 1.8, fontFamily: "Georgia, serif",
+            textAlign: "center", display: "flex", flexDirection: "column", gap: "20px"
           }}>
-            Step into the finest shopping experience Sri Lanka has ever seen — curated collections, premium brands, exclusive opening-day offers, and an atmosphere filled with energy, elegance, and celebration. This is more than a shopping day; it is an occasion you will never forget.
-          </p>
+            <p style={{ fontWeight: "bold", fontSize: "1.2em", color: "#FFD700" }}>
+              🌸 Start This New Year in a Fresh Way! 🌸
+            </p>
+            <p>
+              Skip the hassle of going from place to place...<br/>
+              ✨ Begin your New Year shopping with a fresh experience at a new place!
+            </p>
+            <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "8px" }}>
+               <li>🛍️ Everything you need for your home in one place</li>
+               <li>💥 Massive discounts</li>
+               <li>🎁 Exclusive offers</li>
+            </ul>
+            <p>
+              👨‍👩‍👧‍👦 Join us and celebrate<br/>
+              a fresh beginning this New Year!
+            </p>
+            <p style={{ fontWeight: "bold", fontSize: "1.1em", color: "#FFD700" }}>
+              👉 Shop smart. Enjoy more. All in one place
+            </p>
+          </div>
         </section>
 
         {/* FOOTER */}
