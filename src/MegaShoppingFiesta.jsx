@@ -43,7 +43,7 @@ function FloatingParticles() {
     left: Math.random() * 100,
     delay: Math.random() * 6,
     duration: Math.random() * 8 + 6,
-    color: ["#FFD700","#FF6B9D","#A78BFA","#34D399","#F59E0B","#60A5FA"][i % 6],
+    color: ["#FFD700", "#FF6B9D", "#A78BFA", "#34D399", "#F59E0B", "#60A5FA"][i % 6],
     opacity: Math.random() * 0.5 + 0.2,
   }));
   return (
@@ -142,7 +142,7 @@ export default function App() {
       <style>{css}</style>
       <FloatingParticles />
       <div style={{ position: "fixed", top: 20, left: 20, zIndex: 100 }}>
-        <button 
+        <button
           onClick={() => setLanguage(language === "EN" ? "SI" : "EN")}
           style={{
             background: "rgba(255,255,255,0.1)", border: "1px solid rgba(255,215,0,0.5)",
@@ -203,11 +203,8 @@ export default function App() {
           </div>
 
           <div style={{ animation: heroVisible ? "fadeIn 0.8s ease 0.9s both" : "none", opacity: 0 }}>
-            <p style={{ color: "rgba(255,255,255,0.7)", fontSize: "1rem", letterSpacing: 3, marginBottom: 8, textTransform: "uppercase" }}>
-              {language === "EN" ? "You Are Cordially Invited To The" : "ඔබට ගෞරවයෙන් ආරාධනා කරමු"}
-            </p>
-            <p style={{ color: "rgba(255,255,255,0.6)", fontSize: "0.85rem", marginBottom: 36 }}>
-              {language === "EN" ? "Grand Opening" : "මහා සමාරම්භක උත්සවය"}
+            <p style={{ color: "rgba(255,255,255,0.8)", fontSize: "1.2rem", letterSpacing: 4, marginBottom: 36, textTransform: "uppercase", fontWeight: "bold" }}>
+              MEGA SHOPPING FIESTA
             </p>
           </div>
 
@@ -255,14 +252,16 @@ export default function App() {
         </section>
 
         {/* DIVIDER */}
-        <div style={{ position: "relative", zIndex: 1, textAlign: "center", padding: "0 20px" }}>
+        <div style={{ position: "relative", zIndex: 1, display: "flex", alignItems: "center", maxWidth: 600, margin: "0 auto", padding: "0 20px" }}>
+          <div style={{ flex: 1, height: 1, background: "linear-gradient(90deg,transparent,#FFD700)" }} />
           <div style={{
-            height: 1, background: "linear-gradient(90deg,transparent,#FFD700,transparent)",
-            margin: "0 auto", maxWidth: 600,
-          }} />
-          <div style={{ display: "inline-block", background: "#1a0a2e", padding: "0 20px", marginTop: -14, position: "relative" }}>
-            <span style={{ fontSize: "1.5rem" }}>✦</span>
+            width: 40, height: 40, display: "flex", alignItems: "center", justifyContent: "center",
+            background: "rgba(26,10,46,0.95)", border: "1px solid rgba(255,215,0,0.5)",
+            borderRadius: "50%", flexShrink: 0, margin: "0 10px",
+          }}>
+            <span style={{ fontSize: "1.1rem", color: "#FFD700", lineHeight: 1 }}>✦</span>
           </div>
+          <div style={{ flex: 1, height: 1, background: "linear-gradient(90deg,#FFD700,transparent)" }} />
         </div>
 
         {/* EXPERIENCE */}
@@ -277,16 +276,16 @@ export default function App() {
                 🌸 Start This New Year in a Fresh Way! 🌸
               </p>
               <p>
-                Skip the hassle of going from place to place...<br/>
+                Skip the hassle of going from place to place...<br />
                 ✨ Begin your New Year shopping with a fresh experience at a new place!
               </p>
               <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "8px" }}>
-                 <li>🛍️ Everything you need for your home in one place</li>
-                 <li>💥 Massive discounts</li>
-                 <li>🎁 Exclusive offers</li>
+                <li>🛍️ Everything you need for your home in one place</li>
+                <li>💥 Massive discounts</li>
+                <li>🎁 Exclusive offers</li>
               </ul>
               <p>
-                👨‍👩‍👧‍👦 Join us and celebrate<br/>
+                👨‍👩‍👧‍👦 Join us and celebrate<br />
                 a fresh beginning this New Year!
               </p>
               <p style={{ fontWeight: "bold", fontSize: "1.1em", color: "#FFD700" }}>
@@ -303,22 +302,22 @@ export default function App() {
                 🌸 මේ අවුරුද්ද අලුත් විදිහට පටන් ගන්න! 🌸
               </p>
               <p>
-                පරණ විදිහට රස්තියාදු වෙලා shopping යන්න එපා...<br/>
-                ✨ අලුත් තැනකින්, අලුත් අත්දැකීමක් එක්ක<br/>
+                පරණ විදිහට රස්තියාදු වෙලා shopping යන්න එපා...<br />
+                ✨ අලුත් තැනකින්, අලුත් අත්දැකීමක් එක්ක<br />
                 ඔබේ අවුරුදු සූදානම් වීම ආරම්භ කරන්න!
               </p>
               <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "8px" }}>
-                 <li>🎉 Mega Shopping Fiesta 2026 🎉</li>
-                 <li>📅 අප්‍රේල් 3, 4, 5</li>
-                 <li>📍 BMICH, කොළඹ</li>
-                 <li>🛍️ ගෙදරට අවශ්‍ය හැමදේම එකම තැනකින්</li>
-                 <li>💥 ඉතා ඉහල වට්ටම්</li>
-                 <li>🎁 විශේෂ දීමනා</li>
+                <li>🎉 Mega Shopping Fiesta 2026 🎉</li>
+                <li>📅 අප්‍රේල් 3, 4, 5</li>
+                <li>📍 BMICH, කොළඹ</li>
+                <li>🛍️ ගෙදරට අවශ්‍ය හැමදේම එකම තැනකින්</li>
+                <li>💥 ඉතා ඉහල වට්ටම්</li>
+                <li>🎁 විශේෂ දීමනා</li>
               </ul>
               <p>
-                👨‍👩‍👧‍👦 අප හා එක්වන්න<br/>
-                අලුත් ආරම්භයක් එක්ක<br/>
-                අලුත් අවුරුද්ද සැමරන්න!
+                👨‍👩‍👧‍👦 අප හා එක්වන්න<br />
+                අලුත් ආරම්භයත් එක්ක<br />
+                අලුත් අවුරුද්ද සමරන්න!
               </p>
               <p style={{ fontWeight: "bold", fontSize: "1.1em", color: "#FFD700" }}>
                 👉 මේ අවුරුද්දේ smart විදිහට shopping කරමු!
