@@ -185,15 +185,6 @@ export default function App() {
             <img src={ES_LOGO} alt="EventSphere" style={{ height: 60, opacity: 0.9 }} />
           </div>
 
-          <div style={{ animation: heroVisible ? "fadeIn 0.8s ease 0.2s both" : "none", opacity: 0 }}>
-            <span style={{
-              fontSize: "0.75rem", letterSpacing: 5, textTransform: "uppercase",
-              color: "#FFD700", fontWeight: 700, background: "rgba(255,215,0,0.1)",
-              borderRadius: 30, padding: "6px 18px", border: "1px solid rgba(255,215,0,0.3)",
-              display: "inline-block", marginBottom: 28,
-            }}>✦ The Grand Unveiling ✦</span>
-          </div>
-
           <div style={{ animation: heroVisible ? "fadeIn 1s ease 0.5s both" : "none", opacity: 0, marginBottom: 20 }}>
             <img src={MEGA_LOGO} alt="Mega Shopping Fiesta" style={{
               width: "min(380px, 85vw)",
@@ -211,7 +202,7 @@ export default function App() {
           <div style={{ animation: heroVisible ? "fadeIn 0.8s ease 1.1s both" : "none", opacity: 0, marginBottom: 40 }}>
             <div className="detail-row">
               {[
-                { icon: "📅", label: language === "EN" ? "Date" : "දිනය", value: language === "EN" ? "Friday, April 3rd, 2026" : "2026 අප්‍රේල් 3 වන සිකුරාදා" },
+                { icon: "📅", label: language === "EN" ? "Date" : "දිනය", value: language === "EN" ? "April 3rd, 4th & 5th, 2026" : "2026 අප්‍රේල් 3, 4, 5" },
                 { icon: "🕙", label: language === "EN" ? "Time" : "වේලාව", value: language === "EN" ? "10:00 AM" : "පෙ.ව. 10:00" },
                 { icon: "📍", label: language === "EN" ? "Venue" : "ස්ථානය", value: language === "EN" ? "BMICH, Colombo" : "BMICH, කොළඹ" },
               ].map(d => (
@@ -281,6 +272,7 @@ export default function App() {
               </p>
               <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "8px" }}>
                 <li>🛍️ Everything you need for your home in one place</li>
+                <li> 📅April 3rd, 4th, 5th</li>
                 <li>💥 Massive discounts</li>
                 <li>🎁 Exclusive offers</li>
               </ul>
